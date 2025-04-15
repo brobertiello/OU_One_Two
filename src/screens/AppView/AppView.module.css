@@ -5,6 +5,12 @@
   flex-direction: column;
   position: relative;
   overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.container.fadeIn {
+  opacity: 1;
 }
 
 .header {
@@ -137,13 +143,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 100;
+  z-index: 99;
   backdrop-filter: blur(2px);
   animation: fadeIn 0.3s ease;
 }
 
-.modalOverlay.visible {
-  pointer-events: auto;
+.modalOverlay.closing {
+  animation: fadeOut 0.3s ease forwards;
 }
 
 .modal {
@@ -160,8 +166,43 @@
   margin: 0 2vh;
 }
 
-.modal.visible {
-  pointer-events: auto;
+.modal.closing {
+  animation: slideOut 0.3s ease forwards;
+}
+
+.topModalOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+  backdrop-filter: blur(2px);
+  animation: fadeIn 0.3s ease;
+}
+
+.topModalOverlay.closing {
+  animation: fadeOut 0.3s ease forwards;
+}
+
+.topModal {
+  position: absolute;
+  top: 0;
+  left: 2vh;
+  right: 2vh;
+  background-color: white;
+  border-radius: 0 0 1vh 1vh;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 2vh 4vh rgba(0, 0, 0, 0.2);
+  -webkit-overflow-scrolling: touch;
+  animation: slideDown 0.3s ease;
+  margin: 0;
+}
+
+.topModal.closing {
+  animation: slideUp 0.3s ease forwards;
 }
 
 @keyframes fadeIn {
@@ -170,6 +211,15 @@
   }
   to {
     opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }
 
@@ -182,4 +232,204 @@
     transform: translateY(0);
     opacity: 1;
   }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+.topModalContent {
+  padding: 2vh;
+  margin-top: 10vh; /* Add margin to account for header height */
+}
+
+.topModalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2vh;
+}
+
+.topModalTitle {
+  font-size: 2vh;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.topModalBody {
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+}
+
+.profileInfo {
+  display: flex;
+  align-items: center;
+  gap: 2vh;
+  padding: 2vh;
+  background-color: #f8f9fa;
+  border-radius: 1vh;
+}
+
+.profileAvatar {
+  width: 8vh;
+  height: 8vh;
+  background-color: #841617;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profileIcon {
+  font-size: 4vh;
+  color: white;
+}
+
+.profileDetails {
+  flex: 1;
+}
+
+.profileName {
+  font-size: 2vh;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 0.5vh 0;
+}
+
+.profileEmail {
+  font-size: 1.6vh;
+  color: #666;
+  margin: 0;
+}
+
+.profileSection {
+  background-color: white;
+  border-radius: 1vh;
+  padding: 2vh;
+}
+
+.sectionTitle {
+  font-size: 1.8vh;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 1.5vh 0;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5vh;
+}
+
+.infoItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5vh;
+}
+
+.infoLabel {
+  font-size: 1.4vh;
+  color: #666;
+  font-weight: 600;
+}
+
+.infoValue {
+  font-size: 1.6vh;
+  color: #333;
+}
+
+.announcementList {
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+}
+
+.announcementItem {
+  background-color: white;
+  border-radius: 1vh;
+  padding: 2vh;
+}
+
+.announcementHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1vh;
+}
+
+.announcementDate {
+  font-size: 1.4vh;
+  color: #666;
+  font-weight: 600;
+}
+
+.announcementTime {
+  font-size: 1.4vh;
+  color: #666;
+}
+
+.announcementTitle {
+  font-size: 1.8vh;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 1vh 0;
+}
+
+.announcementText {
+  font-size: 1.6vh;
+  color: #666;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.modalClose {
+  position: absolute;
+  top: 12vh; /* Increased from 2vh to account for header */
+  right: 2vh;
+  background: none;
+  border: none;
+  color: #666;
+  font-size: 2vh;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3vh;
+  height: 3vh;
+  transition: color 0.2s ease;
+}
+
+.modalClose:hover {
+  color: #333;
 } 

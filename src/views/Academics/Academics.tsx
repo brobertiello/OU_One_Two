@@ -12,7 +12,7 @@ import { useState } from 'react';
 import styles from './Academics.module.css';
 
 interface AcademicsProps {
-  showModal: (content: React.ReactNode) => void;
+  showModal: (content: React.ReactNode, isClass: boolean, modalType: string) => void;
   hideModal: () => void;
 }
 
@@ -182,7 +182,7 @@ export const Academics = ({ showModal, hideModal }: AcademicsProps) => {
                   <div 
                     key={index} 
                     className={styles.scheduleItemCompact}
-                    onClick={() => showModal(renderEventModal(classItem))}
+                    onClick={() => showModal(renderEventModal(classItem), false, 'classDetails')}
                   >
                     <div className={styles.scheduleTimeCompact}>{classItem.time}</div>
                     <div className={styles.scheduleCourseCompact}>{classItem.course}</div>
@@ -215,7 +215,7 @@ export const Academics = ({ showModal, hideModal }: AcademicsProps) => {
               <div 
                 key={index} 
                 className={styles.gradeCard}
-                onClick={() => showModal(renderClassModal(course))}
+                onClick={() => showModal(renderClassModal(course), false, 'classDetails')}
               >
                 <div className={styles.gradeHeader}>
                   <h3 className={styles.courseName}>{course.course}</h3>
@@ -255,7 +255,7 @@ export const Academics = ({ showModal, hideModal }: AcademicsProps) => {
                   <div 
                     key={index} 
                     className={styles.assignmentItem}
-                    onClick={() => showModal(renderAssignmentModal(assignment))}
+                    onClick={() => showModal(renderAssignmentModal(assignment), false, 'assignmentDetails')}
                   >
                     <div className={styles.assignmentCourse}>{assignment.course}</div>
                     <div className={styles.assignmentName}>{assignment.name}</div>
@@ -271,7 +271,7 @@ export const Academics = ({ showModal, hideModal }: AcademicsProps) => {
                   <div 
                     key={index} 
                     className={`${styles.assignmentItem} ${styles.pastDue}`}
-                    onClick={() => showModal(renderAssignmentModal(assignment))}
+                    onClick={() => showModal(renderAssignmentModal(assignment), false, 'assignmentDetails')}
                   >
                     <div className={styles.assignmentCourse}>{assignment.course}</div>
                     <div className={styles.assignmentName}>{assignment.name}</div>

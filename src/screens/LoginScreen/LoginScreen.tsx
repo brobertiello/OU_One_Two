@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './LoginScreen.module.css';
 
@@ -6,15 +6,25 @@ export const LoginScreen = () => {
   const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [isVisible, setIsVisible] = useState(false);
+  const [isFading, setIsFading] = useState(false);
+
+  useEffect(() => {
+    // Trigger fade-in animation after component mounts
+    setIsVisible(true);
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // For demo purposes, navigate to app view
-    navigate('/app/home');
+    setIsFading(true);
+    // Wait for fade animation to complete before navigating
+    setTimeout(() => {
+      navigate('/app/home');
+    }, 300); // Match this with the fade-out animation duration
   };
 
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} ${isVisible ? styles.fadeIn : ''} ${isFading ? styles.fadeOut : ''}`}>
       <img
         src="/ou-logo.svg"
         alt="University of Oklahoma"

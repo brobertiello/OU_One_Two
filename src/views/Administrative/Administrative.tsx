@@ -16,7 +16,7 @@ import { useState } from 'react';
 import styles from './Administrative.module.css';
 
 interface AdministrativeProps {
-  showModal: (content: React.ReactNode) => void;
+  showModal: (content: React.ReactNode, isNew: boolean, type: string) => void;
   hideModal: () => void;
 }
 
@@ -286,7 +286,7 @@ export const Administrative = ({ showModal, hideModal }: AdministrativeProps) =>
           <div className={styles.sectionContent}>
             <div 
               className={styles.academicProfileMain}
-              onClick={() => showModal(renderAcademicModal())}
+              onClick={() => showModal(renderAcademicModal(), false, 'academicProfile')}
             >
               <div className={styles.academicProfileGPA}>
                 <span className={styles.gpaLabel}>GPA</span>
@@ -326,7 +326,7 @@ export const Administrative = ({ showModal, hideModal }: AdministrativeProps) =>
         {!collapsedSections.enrollment && (
           <div 
             className={styles.sectionContent}
-            onClick={() => showModal(renderEnrollmentModal())}
+            onClick={() => showModal(renderEnrollmentModal(), false, 'enrollment')}
           >
             <div className={styles.enrollmentHeader}>
               <span className={styles.enrollmentTitle}>Spring 2025 Hours</span>
@@ -365,7 +365,7 @@ export const Administrative = ({ showModal, hideModal }: AdministrativeProps) =>
         {!collapsedSections.financials && (
           <div 
             className={styles.sectionContent}
-            onClick={() => showModal(renderFinancialModal())}
+            onClick={() => showModal(renderFinancialModal(), false, 'financials')}
           >
             <div className={styles.enrollmentHeader}>
               <span className={styles.enrollmentTitle}>Current Balance</span>
@@ -404,7 +404,7 @@ export const Administrative = ({ showModal, hideModal }: AdministrativeProps) =>
         {!collapsedSections.graduation && (
           <div 
             className={styles.sectionContent}
-            onClick={() => showModal(renderGraduationModal())}
+            onClick={() => showModal(renderGraduationModal(), false, 'graduation')}
           >
             <div className={styles.enrollmentHeader}>
               <span className={styles.enrollmentTitle}>Expected Graduation</span>

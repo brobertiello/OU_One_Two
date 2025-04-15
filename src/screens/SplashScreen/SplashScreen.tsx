@@ -4,23 +4,28 @@ import styles from './SplashScreen.module.css';
 
 export const SplashScreen = () => {
   const [showLogin, setShowLogin] = useState(false);
+  const [isFading, setIsFading] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Automatically navigate to login after 3 seconds
-    const timer = setTimeout(() => {
+    // Show login button after 2 seconds
+    const loginTimer = setTimeout(() => {
       setShowLogin(true);
-    }, 2000); // Show login button after 2 seconds
+    }, 2000);
 
-    return () => clearTimeout(timer);
+    return () => clearTimeout(loginTimer);
   }, []);
 
   const handleLoginClick = () => {
-    navigate('/login');
+    setIsFading(true);
+    // Wait for fade animation to complete before navigating
+    setTimeout(() => {
+      navigate('/login');
+    }, 300); // Match this with the fade-out animation duration
   };
 
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} ${isFading ? styles.fadeOut : ''}`}>
       <img
         src="/ou-logo.svg"
         alt="University of Oklahoma"
