@@ -204,8 +204,8 @@ export const AppView = () => {
 
       <main className={styles.content}>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/home" element={<Home />} />
+          <Route path="/" element={<Home showModal={showModal} hideModal={hideModal} />} />
+          <Route path="/home" element={<Home showModal={showModal} hideModal={hideModal} />} />
           <Route path="/academics" element={<Academics showModal={showModal} hideModal={hideModal} />} />
           <Route 
             path="/administrative" 

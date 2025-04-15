@@ -5,10 +5,349 @@
   gap: 2vh;
 }
 
+/* Welcome Section */
+.welcomeSection {
+  margin-bottom: 1vh;
+}
+
+.welcomeTitle {
+  font-size: 2.4vh;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.welcomeSubtitle {
+  font-size: 1.6vh;
+  color: #666;
+  margin: 0.5vh 0 0 0;
+}
+
+/* Weather Widget */
+.weatherWidget {
+  background: linear-gradient(135deg, #e6f2ff 0%, #f0f7ff 100%);
+  border-radius: 1vh;
+  padding: 2vh;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5vh;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  box-shadow: 0 0.2vh 0.4vh rgba(0, 0, 0, 0.1);
+}
+
+.weatherWidget:hover {
+  transform: translateY(-0.2vh);
+}
+
+.weatherWidgetMain {
+  display: flex;
+  align-items: center;
+  gap: 2vh;
+}
+
+.weatherWidgetIcon {
+  font-size: 4vh;
+  color: #ffd700;
+  width: 4vh;
+  height: 4vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.weatherWidgetText {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.weatherWidgetText h3 {
+  font-size: 1.8vh;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.weatherWidgetText p {
+  font-size: 1.4vh;
+  color: #666;
+  margin: 0.3vh 0;
+}
+
+.weatherWidgetStats {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.weatherWidgetTemp {
+  font-size: 2.4vh;
+  font-weight: 600;
+  color: #333;
+}
+
+.weatherWidgetLocation {
+  font-size: 1.4vh;
+  color: #666;
+}
+
+.weatherWidgetConditions {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1vh;
+}
+
+.weatherWidgetCondition {
+  display: flex;
+  align-items: center;
+  gap: 1vh;
+  padding: 1vh;
+  background-color: white;
+  border-radius: 0.6vh;
+}
+
+.weatherWidgetConditionIcon {
+  font-size: 1.6vh;
+  color: #666;
+  width: 1.6vh;
+  height: 1.6vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.weatherWidgetConditionText {
+  font-size: 1.4vh;
+  color: #666;
+}
+
+.weatherDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5vh;
+  background-color: #f8f9fa;
+  padding: 2vh;
+  border-radius: 0.8vh;
+  margin-bottom: 1.5vh;
+}
+
+.weatherCurrent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1.5vh;
+  border-bottom: 1px solid #eee;
+}
+
+.weatherMain {
+  display: flex;
+  align-items: center;
+  gap: 2vh;
+}
+
+.weatherIcon {
+  font-size: 4vh;
+  color: #ffd700;
+  width: 4vh;
+  height: 4vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.weatherText {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.weatherText h3 {
+  font-size: 2vh;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.weatherText p {
+  font-size: 1.4vh;
+  color: #666;
+  margin: 0.3vh 0;
+}
+
+.weatherStats {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5vh;
+}
+
+.weatherTemp {
+  font-size: 2.4vh;
+  font-weight: 600;
+  color: #333;
+}
+
+.weatherLocation {
+  font-size: 1.4vh;
+  color: #666;
+}
+
+.weatherConditions {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1vh;
+}
+
+.weatherCondition {
+  display: flex;
+  align-items: center;
+  gap: 1vh;
+  padding: 1vh;
+  background-color: white;
+  border-radius: 0.6vh;
+}
+
+.conditionIcon {
+  font-size: 1.6vh;
+  color: #666;
+  width: 1.6vh;
+  height: 1.6vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.conditionText {
+  font-size: 1.4vh;
+  color: #666;
+}
+
+.forecastSection {
+  background-color: #f8f9fa;
+  padding: 1.5vh;
+  border-radius: 0.8vh;
+}
+
+.forecastSection h3 {
+  font-size: 1.6vh;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 1vh 0;
+}
+
+.forecastGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1vh;
+}
+
+.forecastDay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5vh;
+  padding: 1vh;
+  background-color: white;
+  border-radius: 0.6vh;
+}
+
+.forecastDay p {
+  font-size: 1.2vh;
+  color: #666;
+  margin: 0;
+}
+
+.forecastDay .forecastIcon {
+  font-size: 2vh;
+  color: #ffd700;
+}
+
+/* Quick Access Cards */
+.quickAccess {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5vh;
+  margin-bottom: 1vh;
+}
+
+.quickAccessCard {
+  background-color: white;
+  border-radius: 1vh;
+  padding: 1.5vh;
+  display: flex;
+  align-items: center;
+  gap: 1.5vh;
+  box-shadow: 0 0.2vh 0.4vh rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.quickAccessCard:hover {
+  transform: translateY(-0.2vh);
+}
+
+.quickAccessIcon {
+  font-size: 2.4vh;
+  color: #841617;
+}
+
+.quickAccessInfo h3 {
+  font-size: 1.6vh;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.quickAccessInfo p {
+  font-size: 1.4vh;
+  color: #666;
+  margin: 0.2vh 0 0 0;
+}
+
+/* Progress Section */
+.progressSection {
+  background-color: white;
+  border-radius: 1vh;
+  padding: 2vh;
+  margin-bottom: 1vh;
+}
+
+.progressItem {
+  margin-bottom: 1.5vh;
+}
+
+.progressItem:last-child {
+  margin-bottom: 0;
+}
+
+.progressItem span {
+  font-size: 1.4vh;
+  color: #666;
+  display: block;
+  margin-bottom: 0.5vh;
+}
+
+.progressBar {
+  height: 0.8vh;
+  background-color: #f0f0f0;
+  border-radius: 0.4vh;
+  overflow: hidden;
+  margin: 0.5vh 0;
+}
+
+.progress {
+  height: 100%;
+  background-color: #841617;
+  border-radius: 0.4vh;
+  transition: width 0.3s ease;
+}
+
+/* Section Styles */
 .section {
   background-color: white;
   border-radius: 1vh;
-  box-shadow: 0 1vh 2vh rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0.2vh 0.4vh rgba(0, 0, 0, 0.1);
   overflow: hidden;
 }
 
@@ -36,14 +375,13 @@
   color: #666;
   font-size: 1.6vh;
   transition: transform 0.2s ease;
-  position: absolute;
-  right: 2vh;
 }
 
 .sectionContent {
   padding: 0 2vh 2vh;
 }
 
+/* Event Items */
 .eventItem {
   display: flex;
   gap: 2vh;
@@ -139,4 +477,152 @@
   font-size: 1.6vh;
   color: #333;
   font-weight: 500;
+}
+
+/* Modal Styles */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal {
+  background: white;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 80vh;
+  overflow-y: auto;
+  animation: slideUp 0.3s ease;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.modalTitle {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+.modalClose {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #666;
+  padding: 4px;
+}
+
+.modalClose:hover {
+  color: #333;
+}
+
+.modalContent {
+  padding: 16px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.modalSection {
+  margin-bottom: 2vh;
+}
+
+.modalSection h3 {
+  font-size: 1.8vh;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 1vh 0;
+}
+
+.modalSection p {
+  font-size: 1.4vh;
+  color: #666;
+  margin: 0.5vh 0;
+}
+
+.assignmentList {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+}
+
+.assignmentItem {
+  background-color: #f8f9fa;
+  padding: 1.5vh;
+  border-radius: 0.8vh;
+}
+
+.assignmentItem p {
+  margin: 0.3vh 0;
+}
+
+.scheduleItem {
+  background-color: #f8f9fa;
+  padding: 1.5vh;
+  border-radius: 0.8vh;
+  margin-bottom: 1vh;
+}
+
+.scheduleItem p {
+  margin: 0.3vh 0;
+}
+
+.gradeInfo {
+  background-color: #f8f9fa;
+  padding: 1.5vh;
+  border-radius: 0.8vh;
+  margin-bottom: 1.5vh;
+}
+
+.gradeBreakdown {
+  background-color: #f8f9fa;
+  padding: 1.5vh;
+  border-radius: 0.8vh;
+}
+
+.gradeBreakdown h4 {
+  font-size: 1.6vh;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 1vh 0;
+}
+
+.gradeItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8vh 0;
+  border-bottom: 1px solid #eee;
+}
+
+.gradeItem:last-child {
+  border-bottom: none;
+}
+
+.gradeItem span {
+  font-size: 1.4vh;
+  color: #666;
 } 

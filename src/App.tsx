@@ -76,6 +76,31 @@ const ViewDescription = () => {
             title: 'Settings Modal',
             description: 'The Settings modal allows users to manage their account preferences, including notification settings, personal information (nickname, gender, pronouns), contact information, emergency contacts, and addresses. The modal slides down from the top of the screen and can be dismissed by clicking the X button or clicking outside the modal.'
           };
+        case 'next class':
+          return {
+            title: 'Next Class Modal',
+            description: 'The Next Class modal displays information about your upcoming class, including the course name, meeting time, location, and instructor. This helps you quickly prepare for your next academic engagement. The modal can be dismissed by clicking the X button or clicking outside the modal.'
+          };
+        case 'due soon':
+          return {
+            title: 'Due Soon Modal',
+            description: 'The Due Soon modal lists all assignments that are due today, showing the course name, assignment title, and due time. This helps you stay on top of your academic responsibilities and manage your time effectively. The modal can be dismissed by clicking the X button or clicking outside the modal.'
+          };
+        case 'today\'s schedule':
+          return {
+            title: 'Today\'s Schedule Modal',
+            description: 'The Today\'s Schedule modal provides a comprehensive view of all your classes for the current day, including meeting times, course names, and locations. This helps you plan your day and navigate between classes efficiently. The modal can be dismissed by clicking the X button or clicking outside the modal.'
+          };
+        case 'latest grade':
+          return {
+            title: 'Latest Grade Modal',
+            description: 'The Latest Grade modal shows detailed information about your most recent grade, including the course name, current letter grade, points earned, and percentage. It also provides a breakdown of individual assignment grades, helping you track your academic performance. The modal can be dismissed by clicking the X button or clicking outside the modal.'
+          };
+        case 'weather':
+          return {
+            title: 'Weather Modal',
+            description: 'The Weather modal displays current weather conditions and a 5-day forecast for the Norman, Oklahoma area. It shows temperature, conditions, and other relevant weather information to help you plan your day on campus. The modal can be dismissed by clicking the X button or clicking outside the modal.'
+          };
         default:
           return null;
       }
@@ -95,7 +120,7 @@ const ViewDescription = () => {
       case '/app/home':
         return {
           title: 'Home View',
-          description: 'The Home view serves as the central hub of the application, featuring a clean and intuitive interface. The header displays your name in the center, with profile and announcements icons on either side. The footer navigation bar provides access to Home, Academics, Degree, Campus, and Other sections.'
+          description: 'The Home view serves as the central hub of the application, featuring a clean and intuitive interface. The header displays your name in the center, with profile and announcements icons on either side. The main content area includes a weather widget with current conditions and forecast, quick access cards for important features, and a campus map section. The footer navigation bar provides access to Home, Academics, Degree, Campus, and Other sections.'
         };
       case '/app/profile':
         return {
@@ -120,12 +145,12 @@ const ViewDescription = () => {
       case '/app/campus':
         return {
           title: 'Campus View',
-          description: 'The Campus view provides access to campus-related resources and information.'
+          description: 'The Campus view provides an interactive map of the University of Oklahoma campus along with a comprehensive directory of campus buildings. Users can search for specific buildings, filter by building type (academic, library, services, dining, recreation, residential), and view building locations on the map. The interface features a clean, modern design with building cards that display building names and types, making it easy to navigate and find campus resources.'
         };
       case '/app/other':
         return {
           title: 'Other View',
-          description: 'The Other view provides access to additional university resources and services.'
+          description: 'The Other view serves as a centralized hub for accessing various university resources and services. It features a searchable directory of important links including academic resources, student services, campus activities, and support services. Users can quickly find and access resources like the academic calendar, career services, library resources, and more. The view also includes a settings section for managing account preferences, notifications, and app customization options.'
         };
       default:
         return null;

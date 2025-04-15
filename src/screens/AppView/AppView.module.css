@@ -297,14 +297,14 @@
 
 .topModalContent {
   padding: 2vh;
-  margin-top: 10vh; /* Add margin to account for header height */
+  margin-top: 10vh;
 }
 
 .topModalHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 2vh;
+  margin-bottom: 3vh;
 }
 
 .topModalTitle {
@@ -317,7 +317,7 @@
 .topModalBody {
   display: flex;
   flex-direction: column;
-  gap: 2vh;
+  gap: 3vh;
 }
 
 .profileInfo {
@@ -368,23 +368,26 @@
 }
 
 .sectionTitle {
-  font-size: 1rem;
+  font-size: 1.8vh;
   font-weight: 600;
   color: #666;
-  margin: 0;
-  padding: 0 1vh;
+  margin: 0 0 2vh 0;
+  padding: 0;
 }
 
 .infoGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.5vh;
+  gap: 2vh;
 }
 
 .infoItem {
   display: flex;
   flex-direction: column;
   gap: 0.5vh;
+  padding: 1.5vh;
+  background-color: #f8f9fa;
+  border-radius: 0.8vh;
 }
 
 .infoLabel {
