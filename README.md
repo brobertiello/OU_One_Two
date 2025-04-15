@@ -130,7 +130,7 @@ The application includes various modals for detailed information:
 - Event description
 
 ### Settings Modal
-- Account preferences
+- Account preferences and settings
 - Personal information management
 - Contact information
 - Emergency contacts
