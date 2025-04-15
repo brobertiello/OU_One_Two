@@ -73,7 +73,7 @@
   -ms-overflow-style: none; /* IE and Edge */
   position: relative;
   background-color: #f8f9fa;
-  padding-top: 13.5vh; /* Space for header + notch */
+  padding-top: 10vh; /* Header height */
   padding-bottom: 8vh; /* Space for footer */
   -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
   overscroll-behavior: contain; /* Prevent scroll chaining */
@@ -125,4 +125,61 @@
   font-size: 2.8vh;
   margin-bottom: 0.4vh;
   transition: all 0.2s ease;
+}
+
+.modalOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  backdrop-filter: blur(2px);
+  animation: fadeIn 0.3s ease;
+}
+
+.modalOverlay.visible {
+  pointer-events: auto;
+}
+
+.modal {
+  background-color: white;
+  border-radius: 1vh;
+  width: 100%;
+  max-width: 500px;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 2vh 4vh rgba(0, 0, 0, 0.2);
+  -webkit-overflow-scrolling: touch;
+  animation: slideIn 0.3s ease;
+  margin: 0 2vh;
+}
+
+.modal.visible {
+  pointer-events: auto;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 } 

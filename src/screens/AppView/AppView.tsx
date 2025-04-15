@@ -17,10 +17,23 @@ import { Campus } from '../../views/Campus/Campus';
 import { Other } from '../../views/Other/Other';
 import { Profile } from '../../views/Profile/Profile';
 import { Announcements } from '../../views/Announcements/Announcements';
+import { useState } from 'react';
 
 export const AppView = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const [modalContent, setModalContent] = useState<React.ReactNode>(null);
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
+  const showModal = (content: React.ReactNode) => {
+    setModalContent(content);
+    setIsModalVisible(true);
+  };
+
+  const hideModal = () => {
+    setIsModalVisible(false);
+    setModalContent(null);
+  };
 
   const handleTabClick = (path: string) => {
     navigate(path);
@@ -73,8 +86,11 @@ export const AppView = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/academics" element={<Academics />} />
-          <Route path="/administrative" element={<Administrative />} />
+          <Route path="/academics" element={<Academics showModal={showModal} hideModal={hideModal} />} />
+          <Route 
+            path="/administrative" 
+            element={<Administrative showModal={showModal} hideModal={hideModal} />} 
+          />
           <Route path="/campus" element={<Campus />} />
           <Route path="/other" element={<Other />} />
           <Route path="/profile" element={<Profile />} />
@@ -119,6 +135,21 @@ export const AppView = () => {
           <span>Other</span>
         </div>
       </footer>
+
+      {/* Modal Overlay */}
+      {isModalVisible && (
+        <div 
+          className={styles.modalOverlay}
+          onClick={hideModal}
+        >
+          <div 
+            className={styles.modal}
+            onClick={(e) => e.stopPropagation()}
+          >
+            {modalContent}
+          </div>
+        </div>
+      )}
     </div>
   );
 }; 
