@@ -7,6 +7,7 @@
   justify-content: center;
   align-items: center;
   color: white;
+  gap: 20px;
 }
 
 .logo {
@@ -25,6 +26,41 @@
 .subtitle {
   font-size: 16px;
   opacity: 0.9;
+  margin-bottom: 20px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.subtitle.hidden {
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+}
+
+.loginButton {
+  background-color: white;
+  color: #841617;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+}
+
+.loginButton.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.loginButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 @keyframes pulse {

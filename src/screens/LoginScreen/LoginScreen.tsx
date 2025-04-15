@@ -10,7 +10,7 @@ export const LoginScreen = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // For demo purposes, navigate to app view
-    navigate('/app');
+    navigate('/app/home');
   };
 
   return (
