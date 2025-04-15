@@ -8,6 +8,7 @@ import {
   faUniversity,
   faEllipsisH,
   faTimes,
+  faSignOutAlt
 } from '@fortawesome/free-solid-svg-icons';
 import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import styles from './AppView.module.css';
@@ -113,6 +114,13 @@ export const AppView = () => {
                 </div>
               </div>
             </div>
+            <button 
+              className={styles.logoutButton}
+              onClick={() => navigate('/')}
+            >
+              <FontAwesomeIcon icon={faSignOutAlt} />
+              <span>Logout</span>
+            </button>
           </div>
         </div>,
         true,

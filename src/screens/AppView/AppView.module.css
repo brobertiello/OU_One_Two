@@ -573,4 +573,32 @@
   color: #999;
   font-size: 12px;
   margin-left: 8px;
+}
+
+.logoutButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1vh;
+  width: 100%;
+  padding: 1.5vh;
+  margin-top: 3vh;
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 0.8vh;
+  color: #dc3545;
+  font-size: 1.6vh;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.logoutButton:hover {
+  background-color: #dc3545;
+  color: white;
+  border-color: #dc3545;
+}
+
+.logoutButton svg {
+  font-size: 1.8vh;
 } 
