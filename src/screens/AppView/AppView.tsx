@@ -61,6 +61,9 @@ export const AppView = () => {
   };
 
   const handleTabClick = (path: string) => {
+    if (isModalVisible) {
+      hideModal();
+    }
     navigate(path);
   };
 
