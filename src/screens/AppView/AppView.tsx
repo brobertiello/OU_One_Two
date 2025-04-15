@@ -118,7 +118,7 @@ export const AppView = () => {
           onClick={() => handleTabClick('/app/administrative')}
         >
           <FontAwesomeIcon icon={faFileAlt} className={styles.footerIcon} />
-          <span>Administrative</span>
+          <span>Degree</span>
         </div>
         <div 
           className={`${styles.footerItem} ${selectedTab === 'campus' ? styles.selected : ''}`} 
