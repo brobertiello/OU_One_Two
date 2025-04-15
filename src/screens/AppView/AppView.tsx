@@ -209,7 +209,7 @@ export const AppView = () => {
             element={<Administrative showModal={showModal} hideModal={hideModal} />} 
           />
           <Route path="/campus" element={<Campus />} />
-          <Route path="/other" element={<Other />} />
+          <Route path="/other" element={<Other showModal={showModal} hideModal={hideModal} />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/announcements" element={<Announcements />} />
         </Routes>

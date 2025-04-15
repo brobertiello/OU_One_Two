@@ -1,3 +1,258 @@
 .container {
   padding: 2vh;
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.settingsCard {
+  background-color: white;
+  border-radius: 1vh;
+  box-shadow: 0 1vh 2vh rgba(0, 0, 0, 0.05);
+  padding: 2vh;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.settingsCard:hover {
+  transform: translateY(-0.5vh);
+  box-shadow: 0 1.5vh 3vh rgba(0, 0, 0, 0.1);
+}
+
+.settingsContent {
+  display: flex;
+  align-items: center;
+  gap: 2vh;
+}
+
+.settingsIcon {
+  width: 4vh;
+  height: 4vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f9fa;
+  border-radius: 1vh;
+  flex-shrink: 0;
+}
+
+.settingsText {
+  flex: 1;
+}
+
+.settingsText h2 {
+  font-size: 1.8vh;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 0.5vh 0;
+}
+
+.settingsText p {
+  font-size: 1.4vh;
+  color: #666;
+  margin: 0;
+}
+
+.settingsArrow {
+  width: 2vh;
+  height: 2vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sectionDivider {
+  height: 1px;
+  background-color: #e9ecef;
+  margin: 1vh 0;
+}
+
+.sectionHeader {
+  padding: 1vh 0;
+}
+
+.sectionHeader h2 {
+  font-size: 1.8vh;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.searchContainer {
+  position: relative;
+  margin-bottom: 2vh;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 2vh;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.6vh;
+  height: 1.6vh;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 1.5vh 2vh 1.5vh 5vh;
+  border: 1px solid #e9ecef;
+  border-radius: 1vh;
+  font-size: 1.6vh;
+  color: #333;
+  background-color: white;
+  box-shadow: 0 1vh 2vh rgba(0, 0, 0, 0.05);
+  position: relative;
+  z-index: 1;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: #841617;
+}
+
+.actionsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2vh;
+  max-width: 100%;
+}
+
+.actionCard {
+  background-color: white;
+  border-radius: 1vh;
+  box-shadow: 0 1vh 2vh rgba(0, 0, 0, 0.05);
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.actionCard:hover {
+  transform: translateY(-0.5vh);
+  box-shadow: 0 1.5vh 3vh rgba(0, 0, 0, 0.1);
+}
+
+.actionContent {
+  padding: 2vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100%;
+}
+
+.actionContent h3 {
+  font-size: 1.6vh;
+  font-weight: 500;
+  color: #333;
+  margin: 0;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.actionContent i {
+  font-size: 1.4vh;
+  color: #666;
+  margin-left: 1vh;
+  flex-shrink: 0;
+}
+
+.settingsSection {
+  background-color: white;
+  border-radius: 1vh;
+  padding: 2vh;
+  margin-bottom: 2vh;
+}
+
+.sectionTitle {
+  font-size: 1.8vh;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 1.5vh 0;
+}
+
+.settingsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5vh;
+}
+
+.settingItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5vh;
+}
+
+.settingLabel {
+  font-size: 1.4vh;
+  color: #666;
+  font-weight: 600;
+}
+
+.settingInput,
+.settingSelect {
+  padding: 1vh;
+  border: 1px solid #e9ecef;
+  border-radius: 0.5vh;
+  font-size: 1.4vh;
+  color: #333;
+  background-color: white;
+  transition: border-color 0.2s ease;
+}
+
+.settingInput:focus,
+.settingSelect:focus {
+  outline: none;
+  border-color: #841617;
+}
+
+.toggleSwitch {
+  position: relative;
+  display: inline-block;
+  width: 4vh;
+  height: 2vh;
+}
+
+.toggleSwitch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggleSwitch label {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #e9ecef;
+  transition: .4s;
+  border-radius: 2vh;
+}
+
+.toggleSwitch label:before {
+  position: absolute;
+  content: "";
+  height: 1.6vh;
+  width: 1.6vh;
+  left: 0.2vh;
+  bottom: 0.2vh;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+.toggleSwitch input:checked + label {
+  background-color: #841617;
+}
+
+.toggleSwitch input:checked + label:before {
+  transform: translateX(2vh);
 } 

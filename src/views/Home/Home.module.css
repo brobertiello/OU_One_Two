@@ -1,3 +1,142 @@
 .container {
   padding: 2vh;
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+}
+
+.section {
+  background-color: white;
+  border-radius: 1vh;
+  box-shadow: 0 1vh 2vh rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2vh;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.sectionHeader:hover {
+  background-color: #f8f9fa;
+}
+
+.sectionHeader h2 {
+  font-size: 1.8vh;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.collapseIcon {
+  color: #666;
+  font-size: 1.6vh;
+  transition: transform 0.2s ease;
+  position: absolute;
+  right: 2vh;
+}
+
+.sectionContent {
+  padding: 0 2vh 2vh;
+}
+
+.eventItem {
+  display: flex;
+  gap: 2vh;
+  padding: 1.5vh;
+  border-radius: 0.8vh;
+  background-color: #f8f9fa;
+  margin-bottom: 1vh;
+}
+
+.eventDate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 6vh;
+  background-color: #841617;
+  color: white;
+  padding: 1vh;
+  border-radius: 0.6vh;
+}
+
+.eventDay {
+  font-size: 2vh;
+  font-weight: 700;
+}
+
+.eventMonth {
+  font-size: 1.2vh;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.eventDetails {
+  flex: 1;
+}
+
+.eventDetails h3 {
+  font-size: 1.6vh;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 0.5vh 0;
+}
+
+.eventDetails p {
+  font-size: 1.4vh;
+  color: #666;
+  margin: 0;
+}
+
+.announcementItem {
+  padding: 1.5vh;
+  border-radius: 0.8vh;
+  background-color: #f8f9fa;
+  margin-bottom: 1vh;
+}
+
+.announcementItem h3 {
+  font-size: 1.6vh;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 0.5vh 0;
+}
+
+.announcementItem p {
+  font-size: 1.4vh;
+  color: #666;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.quickLinkItem {
+  display: flex;
+  align-items: center;
+  gap: 1.5vh;
+  padding: 1.5vh;
+  border-radius: 0.8vh;
+  background-color: #f8f9fa;
+  margin-bottom: 1vh;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.quickLinkItem:hover {
+  background-color: #e9ecef;
+}
+
+.quickLinkIcon {
+  font-size: 2vh;
+  color: #841617;
+}
+
+.quickLinkItem span {
+  font-size: 1.6vh;
+  color: #333;
+  font-weight: 500;
 } 

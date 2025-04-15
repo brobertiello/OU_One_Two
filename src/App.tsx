@@ -71,6 +71,11 @@ const ViewDescription = () => {
             title: 'Event Details Modal',
             description: 'The Event Details modal shows academic event information including the event title, date, time, location, and description. The modal can be dismissed by clicking the X button or clicking outside the modal.'
           };
+        case 'settings':
+          return {
+            title: 'Settings Modal',
+            description: 'The Settings modal allows users to manage their account preferences, including notification settings, personal information (nickname, gender, pronouns), contact information, emergency contacts, and addresses. The modal slides down from the top of the screen and can be dismissed by clicking the X button or clicking outside the modal.'
+          };
         default:
           return null;
       }
