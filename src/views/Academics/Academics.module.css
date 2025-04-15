@@ -1,3 +1,466 @@
 .container {
   padding: 2vh;
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  min-height: 100%;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.container {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.section {
+  background-color: white;
+  border-radius: 1vh;
+  padding: 2vh;
+  box-shadow: 0 1vh 2vh rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  flex-shrink: 0; /* Prevent sections from shrinking */
+}
+
+.section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 1.5vh 2.5vh rgba(0, 0, 0, 0.1);
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 1.5vh;
+  margin-bottom: 1.5vh;
+  cursor: pointer;
+  user-select: none;
+}
+
+.sectionHeader:hover {
+  opacity: 0.8;
+}
+
+.sectionIcon {
+  font-size: 2.5vh;
+  color: #841617;
+}
+
+.sectionIcon.collapsed {
+  transform: none;
+}
+
+.sectionTitle {
+  font-size: 2vh;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+/* Schedule Styles */
+.scheduleContent {
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  overflow: visible;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  max-height: 1000px;
+  opacity: 1;
+}
+
+.scheduleContent.collapsed {
+  max-height: 0;
+  opacity: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.scheduleDayGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+}
+
+.scheduleDayHeader {
+  font-weight: 600;
+  color: #841617;
+  font-size: 1.6vh;
+  padding: 0.5vh 0;
+  border-bottom: 1px solid #eee;
+}
+
+.scheduleItemCompact {
+  display: flex;
+  align-items: center;
+  gap: 1.5vh;
+  padding: 1vh 1.5vh;
+  background-color: #f8f9fa;
+  border-radius: 0.8vh;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.scheduleItemCompact:hover {
+  background-color: #f0f0f0;
+  transform: translateX(4px);
+}
+
+.scheduleTimeCompact {
+  color: #666;
+  font-size: 1.4vh;
+  min-width: 12vh;
+}
+
+.scheduleCourseCompact {
+  font-weight: 500;
+  color: #333;
+  font-size: 1.4vh;
+}
+
+/* Grades Styles */
+.gradesContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5vh;
+  overflow: visible;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  max-height: 1000px;
+  opacity: 1;
+}
+
+.gradesContent.collapsed {
+  max-height: 0;
+  opacity: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.gradeCard {
+  background-color: #f8f9fa;
+  border-radius: 0.8vh;
+  padding: 1.5vh;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gradeCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.gradeHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1vh;
+}
+
+.courseName {
+  font-size: 1.8vh;
+  font-weight: 600;
+  margin: 0;
+  color: #333;
+}
+
+.gradeBadge {
+  background-color: #841617;
+  color: white;
+  padding: 0.5vh 1vh;
+  border-radius: 0.5vh;
+  font-weight: 600;
+}
+
+.gradeDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+}
+
+.credits {
+  color: #666;
+  font-size: 1.4vh;
+}
+
+.assignmentsList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8vh;
+}
+
+.assignmentGrade {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.4vh;
+  color: #333;
+}
+
+/* Assignments Styles */
+.assignmentsContent {
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  overflow: visible;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  max-height: 1000px;
+  opacity: 1;
+}
+
+.assignmentsContent.collapsed {
+  max-height: 0;
+  opacity: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.assignmentsGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+}
+
+.assignmentsSubtitle {
+  font-size: 1.6vh;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.assignmentItem {
+  background-color: #f8f9fa;
+  border-radius: 0.8vh;
+  padding: 1.5vh;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5vh;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.assignmentItem:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.assignmentItem.pastDue {
+  background-color: #fff1f1;
+}
+
+.assignmentCourse {
+  font-weight: 600;
+  color: #841617;
+  font-size: 1.4vh;
+}
+
+.assignmentName {
+  font-weight: 500;
+  color: #333;
+}
+
+.assignmentDue {
+  color: #666;
+  font-size: 1.4vh;
+}
+
+/* Email Section */
+.sectionContent {
+  color: #666;
+  font-size: 1.6vh;
+  line-height: 1.4;
+  overflow: visible;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  max-height: 1000px;
+  opacity: 1;
+}
+
+.sectionContent.collapsed {
+  max-height: 0;
+  opacity: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* Modal Styles */
+.modalOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 2vh;
+  backdrop-filter: blur(4px);
+}
+
+.modalContent {
+  background-color: white;
+  border-radius: 1.5vh;
+  width: 90%;
+  max-width: 50vh;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 2vh 4vh rgba(0, 0, 0, 0.2);
+  animation: modalSlideIn 0.3s ease;
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.modalContent::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2vh;
+  border-bottom: 1px solid #eee;
+  background-color: #f8f9fa;
+  border-radius: 1.5vh 1.5vh 0 0;
+}
+
+.modalTitle {
+  font-size: 2vh;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.modalClose {
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  font-size: 2vh;
+  padding: 0.5vh;
+  transition: all 0.2s ease;
+  border-radius: 50%;
+  width: 3vh;
+  height: 3vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modalClose:hover {
+  color: #841617;
+  background-color: rgba(132, 22, 23, 0.1);
+}
+
+.modalBody {
+  padding: 2vh;
+}
+
+.modalInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5vh;
+  margin-bottom: 2vh;
+}
+
+.modalInfoItem {
+  display: flex;
+  gap: 1vh;
+  padding: 1vh;
+  background-color: #f8f9fa;
+  border-radius: 0.8vh;
+  transition: background-color 0.2s ease;
+}
+
+.modalInfoItem:hover {
+  background-color: #f0f0f0;
+}
+
+.modalLabel {
+  font-weight: 600;
+  color: #666;
+  min-width: 8vh;
+  font-size: 1.4vh;
+}
+
+.modalInfoItem span:not(.modalLabel) {
+  color: #333;
+  font-size: 1.4vh;
+}
+
+.modalDescription {
+  border-top: 1px solid #eee;
+  padding-top: 2vh;
+  margin-top: 2vh;
+}
+
+.modalDescription p {
+  color: #666;
+  font-size: 1.4vh;
+  line-height: 1.5;
+  margin: 0;
+  padding: 1.5vh;
+  background-color: #f8f9fa;
+  border-radius: 0.8vh;
+  border: 1px solid #eee;
+}
+
+.modalSubtitle {
+  font-size: 1.6vh;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 1vh 0;
+}
+
+/* Grade Modal Styles */
+.gradeValue {
+  font-weight: 600;
+  color: #841617;
+  font-size: 1.6vh;
+}
+
+.gradeList {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+  margin-top: 1vh;
+}
+
+.gradeListItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1vh;
+  background-color: #f8f9fa;
+  border-radius: 0.8vh;
+  transition: background-color 0.2s ease;
+}
+
+.gradeListItem:hover {
+  background-color: #f0f0f0;
+}
+
+/* Assignment Modal Styles */
+.pastDueStatus {
+  color: #dc3545;
+  font-weight: 600;
+}
+
+.upcomingStatus {
+  color: #28a745;
+  font-weight: 600;
+}
+
+@keyframes modalSlideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 } 

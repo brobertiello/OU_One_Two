@@ -82,7 +82,7 @@ function App() {
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           </IPhone>
-        </div>
+      </div>
         <ViewDescription />
       </div>
     </Router>
