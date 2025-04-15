@@ -1,16 +1,13 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faFileAlt,
-  faUserGraduate,
-  faClipboardList,
-  faDollarSign,
+import { 
   faGraduationCap,
-  faTimes,
-  faExternalLinkAlt,
-  faCalendarAlt,
-  faEnvelope,
   faChevronDown,
   faChevronUp,
+  faTimes,
+  faExternalLinkAlt,
+  faUserGraduate,
+  faCalendarAlt,
+  faDollarSign
 } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 import styles from './Administrative.module.css';
