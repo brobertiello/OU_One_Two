@@ -142,7 +142,11 @@ The application includes various modals for detailed information:
 - Course description
 - Grade breakdown (when applicable)
 
-]
+### Assignment Details Modal
+
+- Assignment information
+- Course name and due date
+- Status tracking (upcoming/past due)
 
 ### Event Details Modal
 
